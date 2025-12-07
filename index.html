@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nom de la Chanteuse | Lancement du Deuxième Album</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <button class="hamburger-btn" aria-label="Abrir Menú de Navegación" aria-expanded="false" aria-controls="sidebar-nav">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <nav id="sidebar-nav" role="navigation" aria-label="Navegación Principal del Sitio">
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#historia">Histoire</a></li>
+            <li><a href="#discografia">Discographie</a></li>
+            <li><a href="#videos">Vidéos</a></li>
+            <li><a href="#fotos">Photos</a></li>
+            <li><a href="#contacto">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="content-wrapper">
+
+        <section id="inicio" class="hero-section">
+            <div class="video-background">
+                <video autoplay loop muted poster="hero-poster-fallback.jpg">
+                    <source src="video.mp4" type="video/mp4">
+                    Tu navegador no soporta el tag de video.
+                </video>
+            </div>
+            <h1 class="hero-title">ANGELI</h1>
+            <h2 class="hero-subtitle">Voila</h2>
+            
+            <div class="hero-artist-image">
+                </div>
+
+            
+        </section>
+
+        <section id="fotos" class="gallery-section content-section">
+            <h2 class="section-title">Photos | Galería Surrealista</h2>
+            
+            <div class="photo-grid">
+                <div class="photo-item">
+                    <img src="img/a.png" alt="Retrato surrealista de la artista 1">
+                </div>
+                <div class="photo-item">
+                    <img src="img/b.png" alt="Retrato surrealista de la artista 2">
+                </div>
+                <div class="photo-item">
+                    <img src="img/c.png" alt="Retrato surrealista de la artista 3">
+                </div>
+                <div class="photo-item">
+                    <img src="img/d.png" alt="Retrato surrealista de la artista 4">
+                </div>
+                <div class="photo-item">
+                    <img src="img/e.png" alt="Retrato surrealista de la artista 5">
+                </div>
+                <div class="photo-item">
+                    <img src="img/f.png" alt="Retrato surrealista de la artista 6">
+                </div>
+                <div class="photo-item">
+                    <img src="img/g.png" alt="Retrato surrealista de la artista 7">
+                </div>
+                <div class="photo-item">
+                    <img src="img/h.png" alt="Retrato surrealista de la artista 8">
+                </div>
+                <div class="photo-item">
+                    <img src="img/i.png" alt="Retrato surrealista de la artista 9">
+                </div>
+                
+            </div>
+        </section>
+        <section id="discografia" class="music-section content-section">
+            <h2 class="section-title">Discographie | Voila</h2>
+            
+            <div class="music-container">
+                <div class="track-item">
+                    <div class="track-artwork" style="background-image: url('img/fondo-mp3.png');"></div>
+                    <div class="track-details">
+                        <h3 class="track-title">Amour inattendu</h3>
+                        <p class="track-artist">ANGELI</p>
+                    </div>
+                    <audio controls preload="none">
+                        <source src="mp3/Amor Inesperado . Amour inattendu.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <a href="mp3/Amor Inesperado . Amour inattendu.mp3" download class="download-link" aria-label="Descargar Voila (Tema 1)"><i class="fas fa-download"></i></a>
+                </div>
+
+                <div class="track-item">
+                    <div class="track-artwork" style="background-image: url('img/fondo-mp3.png');"></div>
+                    <div class="track-details">
+                        <h3 class="track-title">Voila</h3>
+                        <p class="track-artist">ANGELI</p>
+                    </div>
+                    <audio controls preload="none">
+                        <source src="mp3/Aquí Estoy . VOILA.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <a href="mp3/Aquí Estoy . VOILA.mp3" download class="download-link" aria-label="Descargar Rêve Éternel (Tema 2)"><i class="fas fa-download"></i></a>
+                </div>
+                
+                <div class="track-item">
+                    <div class="track-artwork" style="background-image: url('img/fondo-mp3.png');"></div>
+                    <div class="track-details">
+                        <h3 class="track-title">Cyanure dans le thé</h3>
+                        <p class="track-artist">ANGELI</p>
+                    </div>
+                    <audio controls preload="none">
+                        <source src="mp3/Cianuro en el Té . Cyanure dans le thé.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <a href="mp3/Cianuro en el Té . Cyanure dans le thé.mp3" download class="download-link" aria-label="Descargar L'Amour IA (Tema 3)"><i class="fas fa-download"></i></a>
+                </div>
+                
+                <div class="track-item">
+                    <div class="track-artwork" style="background-image: url('img/fondo-mp3.png');"></div>
+                    <div class="track-details">
+                        <h3 class="track-title">là où la douceur demeure</h3>
+                        <p class="track-artist">ANGELI</p>
+                    </div>
+                    <audio controls preload="none">
+                        <source src="mp3/Donde Se Queda la Dulzura . là où la douceur demeure.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <a href="mp3/Donde Se Queda la Dulzura . là où la douceur demeure.mp3" download class="download-link" aria-label="Descargar Titre du Thème 12"><i class="fas fa-download"></i></a>
+                </div>
+
+                <div class="track-item">
+                    <div class="track-artwork" style="background-image: url('img/fondo-mp3.png');"></div>
+                    <div class="track-details">
+                        <h3 class="track-title">Maison</h3>
+                        <p class="track-artist">ANGELI</p>
+                    </div>
+                    <audio controls preload="none">
+                        <source src="mp3/Donde vamos . MAISON.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <a href="mp3/Donde vamos . MAISON.mp3" download class="download-link" aria-label="Descargar Titre du Thème 12"><i class="fas fa-download"></i></a>
+                </div>
+
+                <div class="track-item">
+                    <div class="track-artwork" style="background-image: url('img/fondo-mp3.png');"></div>
+                    <div class="track-details">
+                        <h3 class="track-title">l'écho d'hier</h3>
+                        <p class="track-artist">ANGELI</p>
+                    </div>
+                    <audio controls preload="none">
+                        <source src="mp3/El Eco de Ayer . l'écho d'hier.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <a href="mp3/El Eco de Ayer . l'écho d'hier.mp3" download class="download-link" aria-label="Descargar Titre du Thème 12"><i class="fas fa-download"></i></a>
+                </div>
+
+                <div class="track-item">
+                    <div class="track-artwork" style="background-image: url('img/fondo-mp3.png');"></div>
+                    <div class="track-details">
+                        <h3 class="track-title">nos cœurs dans les ténèbres</h3>
+                        <p class="track-artist">ANGELI</p>
+                    </div>
+                    <audio controls preload="none">
+                        <source src="mp3/Nuestros Corazones en la Oscuridad . nos cœurs dans les ténèbres.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <a href="mp3/Nuestros Corazones en la Oscuridad . nos cœurs dans les ténèbres.mp3" download class="download-link" aria-label="Descargar Titre du Thème 12"><i class="fas fa-download"></i></a>
+                </div>
+
+                <div class="track-item">
+                    <div class="track-artwork" style="background-image: url('img/fondo-mp3.png');"></div>
+                    <div class="track-details">
+                        <h3 class="track-title">des mots que je ne dis pas</h3>
+                        <p class="track-artist">ANGELI</p>
+                    </div>
+                    <audio controls preload="none">
+                        <source src="mp3/Palabras que no digo . des mots que je ne dis pas.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <a href="mp3/Palabras que no digo . des mots que je ne dis pas.mp3" download class="download-link" aria-label="Descargar Titre du Thème 12"><i class="fas fa-download"></i></a>
+                </div>
+
+                <div class="track-item">
+                    <div class="track-artwork" style="background-image: url('img/fondo-mp3.png');"></div>
+                    <div class="track-details">
+                        <h3 class="track-title">Tu étais ma vie</h3>
+                        <p class="track-artist">ANGELI</p>
+                    </div>
+                    <audio controls preload="none">
+                        <source src="mp3/Resurgir sin Ruido . Tu étais ma vie.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <a href="mp3/Resurgir sin Ruido . Tu étais ma vie.mp3" download class="download-link" aria-label="Descargar Titre du Thème 12"><i class="fas fa-download"></i></a>
+                </div>
+
+                <div class="track-item">
+                    <div class="track-artwork" style="background-image: url('img/fondo-mp3.png');"></div>
+                    <div class="track-details">
+                        <h3 class="track-title">voix à l'écran</h3>
+                        <p class="track-artist">ANGELI</p>
+                    </div>
+                    <audio controls preload="none">
+                        <source src="mp3/Voces en la Pantalla . voix à l'écran.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <a href="mp3/Voces en la Pantalla . voix à l'écran.mp3" download class="download-link" aria-label="Descargar Titre du Thème 12"><i class="fas fa-download"></i></a>
+                </div>
+
+                <div class="track-item">
+                    <div class="track-artwork" style="background-image: url('img/fondo-mp3.png');"></div>
+                    <div class="track-details">
+                        <h3 class="track-title">voix dans l'ombre</h3>
+                        <p class="track-artist">ANGELI</p>
+                    </div>
+                    <audio controls preload="none">
+                        <source src="mp3/Voz en la Penumbra . voix dans l'ombre.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <a href="mp3/Voz en la Penumbra . voix dans l'ombre.mp3" download class="download-link" aria-label="Descargar Titre du Thème 12"><i class="fas fa-download"></i></a>
+                </div>
+
+                <div class="track-item">
+                    <div class="track-artwork" style="background-image: url('img/fondo-mp3.png');"></div>
+                    <div class="track-details">
+                        <h3 class="track-title">L'Âme en Musique</h3>
+                        <p class="track-artist">ANGELI</p>
+                    </div>
+                    <audio controls preload="none">
+                        <source src="mp3/L'Âme en Musique (instrumental).mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <a href="mp3/L'Âme en Musique (instrumental).mp3" download class="download-link" aria-label="Descargar Titre du Thème 12"><i class="fas fa-download"></i></a>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="videos" class="video-section content-section">
+            <h2 class="section-title">Vidéos </h2>
+            
+            <div class="video-grid">
+                <div class="video-item" data-video-src="vids/Angeli-Amor_Inesperado.mp4">
+                    <div class="video-thumbnail" style="background-image: url('img/vids-amor_inesperado.png');">
+                        <div class="play-icon"><i class="fas fa-play"></i></div>
+                    </div>
+                    <h3 class="video-title">Amour inattendu (Clip Officiel)</h3>
+                </div>
+                
+                <div class="video-item" data-video-src="vids/Angeli-Voila.mp4">
+                    <div class="video-thumbnail" style="background-image: url('img/vids-Voila.png');">
+                        <div class="play-icon"><i class="fas fa-play"></i></div>
+                    </div>
+                    <h3 class="video-title">Voila </h3>
+                </div>
+                
+                <div class="video-item" data-video-src="vids/Angeli-Cyanure.mp4">
+                    <div class="video-thumbnail" style="background-image: url('img/vids-cyanure.png');">
+                        <div class="play-icon"><i class="fas fa-play"></i></div>
+                    </div>
+                    <h3 class="video-title">Cyanure dans le thé</h3>
+                </div>
+
+                <div class="video-item" data-video-src="vids/Angeli-El_eco_del_ayer.mp4">
+                    <div class="video-thumbnail" style="background-image: url('img/vids-el_eco_del_ayer.png');">
+                        <div class="play-icon"><i class="fas fa-play"></i></div>
+                    </div>
+                    <h3 class="video-title">ll'écho d'hier</h3>
+                </div>
+                <div class="video-item" data-video-src="vids/Angeli-Maison.mp4">
+                    <div class="video-thumbnail" style="background-image: url('img/vids-Maison.png');">
+                        <div class="play-icon"><i class="fas fa-play"></i></div>
+                    </div>
+                    <h3 class="video-title">Maison</h3>
+                </div>
+                <div class="video-item" data-video-src="vids/Angeli-Tu_étais_ma_vie.mp4">
+                    <div class="video-thumbnail" style="background-image: url('img/vids-resurgir.jpg');">
+                        <div class="play-icon"><i class="fas fa-play"></i></div>
+                    </div>
+                    <h3 class="video-title">Tu étais ma vie</h3>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="historia" class="content-section">
+            <h2>Histoire</h2>
+            <p>Angeli fue creada gracias a la IA, y con la idea de IMAGENES 3.0 que ayudo a crear el modelo y estilo de sus musica. IMAGENES 3.0 esta ideado con esa idea de crear y satisfacer gustos. Detras de ello OMAR ABUD es el creador de ANGELI.</p>
+        </section>
+
+        <section id="contacto" class="content-section">
+            <h2>Contact</h2>
+            <p>Formulario de contacto o información de booking...</p>
+        </section>
+
+    </main>
+
+    <footer class="social-footer" aria-label="Redes Sociales de la Artista">
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </footer>
+
+    <div id="video-lightbox" class="lightbox video-lightbox" aria-hidden="true" role="dialog">
+        <div class="lightbox-content video-content">
+            <button class="lightbox-close-btn video-close-btn" aria-label="Cerrar Video">&times;</button>
+            <video id="lightbox-video" controls autoplay playsinline preload="none" muted>
+                <source src="" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+            </video>
+        </div>
+    </div>
+    <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
+        <div class="lightbox-content">
+            <button class="lightbox-close-btn" aria-label="Cerrar Galería">&times;</button>
+            <img id="lightbox-image" src="" alt="Imagen ampliada de la artista">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
