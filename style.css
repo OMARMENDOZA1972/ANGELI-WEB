@@ -440,12 +440,11 @@ a:hover {
     cursor: pointer;
 }
 /* --- 10. ESTILOS DE SECCIÓN DE VIDEOS --- */
-
 .video-grid {
     display: grid;
-    /* 3 columnas para tarjetas verticales en desktop */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-    gap: 30px;
+    /* Reducimos el tamaño mínimo a 150px para mostrar más videos en la cuadrícula */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    gap: 20px; /* Reducimos el espacio entre elementos para compactar */
     margin-top: 40px;
 }
 
@@ -507,32 +506,46 @@ a:hover {
     border-top: 1px solid rgba(138, 43, 226, 0.4);
 }
 
-/* --- 11. ESTILOS LIGHTBOX ESPECÍFICOS PARA VIDEO --- */
-
-/* El modal de videos usará los estilos generales de .lightbox, 
-   pero ajustaremos el tamaño del contenido para 9:16 */
-
-.video-content {
-    /* El modal será más alto que ancho para 9:16 */
-    max-width: 450px; /* Ancho máximo razonable para un video vertical */
-    width: 90%; 
-    padding: 0;
+/* --- 11. ESTILOS LIGHTBOX ESPECÍFICOS PARA VIDEO (Modificado a Fullscreen-like) --- */
+.video-lightbox.is-visible {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
 }
 
-.video-content video {
+.video-content {
+    /* Aumentamos el ancho máximo para simular el "popup de pantalla grande" */
+    max-width: 80vw; /* 80% del ancho de la vista */
+    max-height: 90vh; /* 90% del alto de la vista */
+    width: 90%; /* Ancho en caso de que 80vw sea demasiado grande */
+    height: 90%; /* Alto en caso de que 90vh sea demasiado alto */
+    padding: 0;
+    background: transparent;
+    
+    /* Usamos 'aspect-ratio' si es soportado, si no, lo ajustamos con width/height */
+    /* Para 9:16 (vertical), el width es la limitación principal */
+    aspect-ratio: 9 / 16; /* ¡Clave! Fuerza la relación vertical (solo navegadores modernos) */
+    
+    /* Si el navegador no soporta aspect-ratio, volvemos a límites fijos: */
+    /* max-width: 450px; /* Descomentar si aspect-ratio no funciona */
+}
+
+/* Estilo del Iframe incrustado para YouTube */
+#lightbox-iframe {
     display: block;
     width: 100%;
-    /* Altura que respeta la relación 9:16 */
-    max-height: 90vh;
-    height: auto; 
+    height: 100%;
+    border: none;
     border-radius: 10px;
 }
 
+/* Media Query para Móvil (Mantenemos la relación de aspecto) */
 @media (max-width: 768px) {
-    .video-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
-    }
     .video-content {
         max-width: 95%; 
+        max-height: 85vh;
+        width: 95%;
+        height: 85%;
     }
 }

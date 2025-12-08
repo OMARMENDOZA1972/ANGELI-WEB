@@ -30,26 +30,65 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // --- Lógica del Lightbox/Modal de Fotos (MANTENER CÓDIGO EXISTENTE) ---
-    // ... (El código de lightbox, lightboxImage, closeButton para FOTOS debe permanecer igual) ...
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImage = document.getElementById('lightbox-image');
-    const photoCloseButton = document.querySelector('.lightbox-close-btn'); // Asume que este es el botón de la foto
-    const photoItems = document.querySelectorAll('.photo-item img');
+    // --- Lógica del Lightbox/Modal de VIDEOS (AÑADIR ESTO) ---
+    const videoLightbox = document.getElementById('video-lightbox');
+    // CAMBIAR: Usar el nuevo ID para el IFRAME
+    const lightboxIframe = document.getElementById('lightbox-iframe'); 
+    const videoCloseButton = document.querySelector('.video-close-btn');
+    const videoItems = document.querySelectorAll('.video-item');
 
-    // Función para abrir el lightbox de FOTOS
-    photoItems.forEach(img => {
-        img.addEventListener('click', () => {
-            const src = img.getAttribute('src');
-            const alt = img.getAttribute('alt');
+    // Función para abrir el lightbox de videos
+    videoItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const videoSrc = item.getAttribute('data-video-src');
             
-            lightboxImage.setAttribute('src', src);
-            lightboxImage.setAttribute('alt', alt);
-            lightbox.classList.add('is-visible');
-            lightbox.setAttribute('aria-hidden', 'false');
+            // 1. Asigna la fuente al IFRAME
+            // Añadimos ?autoplay=1 al final para que empiece a sonar
+            lightboxIframe.setAttribute('src', videoSrc + '?autoplay=1');
+            
+            // 2. Muestra el modal
+            videoLightbox.classList.add('is-visible');
+            videoLightbox.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden'; 
+            
+            // El video se reproduce automáticamente gracias al parámetro ?autoplay=1
         });
     });
+
+    // Función para cerrar el lightbox de videos
+    function closeVideoLightbox() {
+        // DETENER LA REPRODUCCIÓN: borramos el src del iframe
+        lightboxIframe.setAttribute('src', ''); 
+        
+        videoLightbox.classList.remove('is-visible');
+        videoLightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = ''; 
+    }
+
+    // 1. Cierra con el botón 'X'
+    videoCloseButton.addEventListener('click', closeVideoLightbox);
+
+    // 2. Cierra haciendo clic fuera del video
+    videoLightbox.addEventListener('click', (event) => {
+        if (event.target === videoLightbox) {
+            closeVideoLightbox();
+        }
+    });
+
+    // 3. Cierra con la tecla ESC (Asegúrate de que esta lógica está en la función document.addEventListener('keydown'))
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+             // Si el modal de fotos está abierto, ciérralo
+             if (lightbox.classList.contains('is-visible')) {
+                closePhotoLightbox();
+             } 
+             // Si el modal de video está abierto, ciérralo
+             else if (videoLightbox.classList.contains('is-visible')) {
+                closeVideoLightbox();
+             }
+        }
+    });
+});
 
     // Función para cerrar el lightbox de FOTOS
     function closePhotoLightbox() {
@@ -129,4 +168,3 @@ document.addEventListener('DOMContentLoaded', () => {
              }
         }
     });
-});
