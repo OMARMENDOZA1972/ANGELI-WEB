@@ -240,43 +240,42 @@
         </section>
 
         <section id="videos" class="video-section content-section">
-            <h2 class="section-title">Vidéos </h2>
+                <h2 class="section-title">Vidéos </h2>
             
-            <div class="video-grid">
-                <div class="video-item" data-video-src="vids/Angeli-Amor_Inesperado.mp4">
+                <div class="video-item" data-video-src="https://www.youtube.com/embed/eUugfalpcHU">
                     <div class="video-thumbnail" style="background-image: url('img/vids-amor_inesperado.png');">
-                        <div class="play-icon"><i class="fas fa-play"></i></div>
+                    <div class="play-icon"><i class="fas fa-play"></i></div>
                     </div>
                     <h3 class="video-title">Amour inattendu (Clip Officiel)</h3>
                 </div>
                 
-                <div class="video-item" data-video-src="vids/Angeli-Voila.mp4">
+                <div class="video-item" data-video-src="https://www.youtube.com/embed/uz98g62Fy8Q">
                     <div class="video-thumbnail" style="background-image: url('img/vids-Voila.png');">
                         <div class="play-icon"><i class="fas fa-play"></i></div>
                     </div>
                     <h3 class="video-title">Voila </h3>
                 </div>
                 
-                <div class="video-item" data-video-src="vids/Angeli-Cyanure.mp4">
+                <div class="video-item" data-video-src="https://www.youtube.com/embed/s4otCl34Rqg">
                     <div class="video-thumbnail" style="background-image: url('img/vids-cyanure.png');">
                         <div class="play-icon"><i class="fas fa-play"></i></div>
                     </div>
                     <h3 class="video-title">Cyanure dans le thé</h3>
                 </div>
 
-                <div class="video-item" data-video-src="vids/Angeli-El_eco_del_ayer.mp4">
+                <div class="video-item" data-video-src="https://www.youtube.com/embed/gC1Tha1UYx0">
                     <div class="video-thumbnail" style="background-image: url('img/vids-el_eco_del_ayer.png');">
                         <div class="play-icon"><i class="fas fa-play"></i></div>
                     </div>
                     <h3 class="video-title">ll'écho d'hier</h3>
                 </div>
-                <div class="video-item" data-video-src="vids/Angeli-Maison.mp4">
+                <div class="video-item" data-video-src="https://www.youtube.com/embed/LbyF025Yc0U">
                     <div class="video-thumbnail" style="background-image: url('img/vids-Maison.png');">
                         <div class="play-icon"><i class="fas fa-play"></i></div>
                     </div>
                     <h3 class="video-title">Maison</h3>
                 </div>
-                <div class="video-item" data-video-src="vids/Angeli-Tu_étais_ma_vie.mp4">
+                <div class="video-item" data-video-src="https://www.youtube.com/embed/gC1Tha1UYx0">
                     <div class="video-thumbnail" style="background-image: url('img/vids-resurgir.jpg');">
                         <div class="play-icon"><i class="fas fa-play"></i></div>
                     </div>
@@ -308,10 +307,7 @@
     <div id="video-lightbox" class="lightbox video-lightbox" aria-hidden="true" role="dialog">
         <div class="lightbox-content video-content">
             <button class="lightbox-close-btn video-close-btn" aria-label="Cerrar Video">&times;</button>
-            <video id="lightbox-video" controls autoplay playsinline preload="none" muted>
-                <source src="" type="video/mp4">
-                Tu navegador no soporta el tag de video.
-            </video>
+            <iframe id="lightbox-iframe" width="100%" height="100%" src="" frameborder="0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
         </div>
     </div>
     <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
