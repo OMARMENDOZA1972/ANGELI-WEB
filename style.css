@@ -16,7 +16,10 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+html {
+    /* Habilita la animación de desplazamiento nativa en el navegador */
+    scroll-behavior: smooth; 
+}
 body {
     font-family: 'Montserrat', sans-serif;
     color: var(--color-text-light);
@@ -97,7 +100,28 @@ a:hover {
     color: rgba(255, 255, 255, 0.8);
     letter-spacing: 2px;
 }
-
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: var(--color-text-light);
+    margin-bottom: 0.5rem;
+    /* Estado inicial: Oculto para la animación */
+    opacity: 0;
+    text-shadow: none; 
+    transform: translateY(20px); 
+    /* Transición para la animación de aparición */
+    transition: opacity 1.5s ease-out, text-shadow 1.5s ease-out, transform 1.5s ease-out; 
+    
+    z-index: 2; /* Para que el texto esté encima del fondo */
+    position: relative;
+}
+/* Clase para la Aparición Neon (Agregada por JS) */
+.hero-title.show {
+    opacity: 1;
+    transform: translateY(0);
+    /* Efecto de texto mágico/elegante completo */
+    text-shadow: 0 0 15px var(--color-accent-primary), 0 0 5px rgba(255, 255, 255, 0.7);
+}
 /* --- 3. MENÚ HAMBURGUESA Y SIDEBAR --- */
 .hamburger-btn {
     position: fixed;
@@ -196,6 +220,12 @@ a:hover {
     border-bottom: 2px solid var(--color-accent-primary);
     display: inline-block;
     padding-bottom: 5px;
+}
+#contacto {
+    /* Mantenemos el padding superior y añadimos un gran padding inferior */
+    padding-top: 60px;
+    /* Aumentamos el padding inferior para separar el contenido del footer fijo */
+    padding-bottom: 120px; 
 }
 
 /* --- 6. ESTILO DE GALERÍA DE FOTOS SURREALISTA --- */
@@ -777,5 +807,49 @@ a:hover {
 
     .history-text p {
         font-size: 1rem;
+    }
+}
+/* --- 13. ESTILOS DE BOTÓN VOLVER AL INICIO (Back to Top) --- */
+
+#backToTopBtn {
+    position: fixed;
+    bottom: 90px; /* Separación del footer fijo y del borde inferior */
+    right: 20px;
+    z-index: 100; /* Asegura que esté por encima de la mayoría de los elementos */
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-accent-secondary); /* Cian */
+    color: var(--color-bg-dark); /* Color oscuro para el icono */
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none; /* Inicialmente oculto por JS */
+    opacity: 0;
+    transition: opacity 0.3s, background-color 0.3s, transform 0.3s;
+    font-size: 1.2rem;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); /* Efecto neón */
+}
+
+#backToTopBtn.show {
+    display: flex; /* Se muestra como flex para centrar el icono */
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+
+#backToTopBtn:hover {
+    background-color: var(--color-accent-primary); /* Púrpura al pasar el ratón */
+    color: var(--color-text-light); /* Icono claro */
+    box-shadow: 0 0 20px var(--color-accent-primary);
+    transform: scale(1.1);
+}
+
+/* Media Query para móvil: asegura que el botón no interfiera con el borde */
+@media (max-width: 768px) {
+    #backToTopBtn {
+        bottom: 80px; /* Ligeramente más cerca del footer en móvil */
+        right: 15px;
+        width: 45px;
+        height: 45px;
     }
 }
