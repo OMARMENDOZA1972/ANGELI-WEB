@@ -125,7 +125,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-// --- 5. LÓGICA DEL SLIDER DE HISTORIA ---
+// --- 5. LÓGICA DE CARGA INTELIGENTE Y EFECTO NEON (HERO SECTION) ---
+    const heroVideo = document.querySelector('.video-background video');
+    const heroTitle = document.querySelector('.hero-title');
+
+    // Retraso de 1 segundo para dar tiempo a cargar el CSS/poster
+    setTimeout(() => {
+        // 1. Carga Inteligente del Video: Añadir 'autoplay'
+        if (heroVideo) {
+            heroVideo.setAttribute('autoplay', 'autoplay');
+            heroVideo.load(); // Forzar la carga de la fuente
+        }
+        
+        // 2. Efecto de Aparición del Título Neon
+        if (heroTitle) {
+            heroTitle.classList.add('show');
+        }
+
+    }, 1000); // 1000ms = 1 segundo de retraso
+// --- 6. LÓGICA DEL SLIDER DE HISTORIA ---
     const slider = document.querySelector('.history-slider');
     const sliderTrack = slider.querySelector('.slider-track');
     const slides = slider.querySelectorAll('.slide-item');
@@ -189,3 +207,24 @@ document.addEventListener('DOMContentLoaded', () => {
             goToSlide(currentIndex + 1);
         }, 5000);
     });
+    // --- 7. LÓGICA DEL BOTÓN VOLVER A INICIO (Back to Top) ---
+
+    const backToTopButton = document.getElementById('backToTopBtn');
+
+    // Muestra/Oculta el botón basado en la posición de scroll
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) { // Muestra el botón después de 300px de scroll
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+    });
+
+    // Desplazamiento suave al hacer clic
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Desplazamiento animado suave
+        });
+    });
+; // Cierre del document.addEventListener
