@@ -440,12 +440,17 @@ a:hover {
     cursor: pointer;
 }
 /* --- 10. ESTILOS DE SECCIÓN DE VIDEOS --- */
+.video-section .content-section {
+    max-width: 1000px; /* Limita un poco el ancho para que la cuadrícula se vea mejor */
+}
+
 .video-grid {
     display: grid;
-    /* Reducimos el tamaño mínimo a 150px para mostrar más videos en la cuadrícula */
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
-    gap: 20px; /* Reducimos el espacio entre elementos para compactar */
+    /* Muestra 3 columnas, cada una de 1fr para igualar el ancho. */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
     margin-top: 40px;
+    padding: 0 20px; /* Añadir padding para que no se pegue a los bordes */
 }
 
 .video-item {
@@ -465,7 +470,7 @@ a:hover {
 }
 
 .video-thumbnail {
-    /* El truco para forzar el aspecto 9:16 (Vertical) */
+    /* Mantenemos el truco de aspecto para las miniaturas verticales 9:16 */
     width: 100%;
     padding-top: 177.77%; /* 16 / 9 = 1.7777... */
     position: relative;
@@ -505,7 +510,13 @@ a:hover {
     background-color: rgba(10, 10, 15, 0.8);
     border-top: 1px solid rgba(138, 43, 226, 0.4);
 }
-
+/* --- Media Query para Móviles --- */
+@media (max-width: 768px) {
+    /* Aquí hacemos que la cuadrícula de videos sea de 1 sola columna en pantallas pequeñas */
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+}
 /* --- 11. ESTILOS LIGHTBOX ESPECÍFICOS PARA VIDEO (Modificado a Fullscreen-like) --- */
 .video-lightbox.is-visible {
     display: flex;
@@ -547,5 +558,224 @@ a:hover {
         max-height: 85vh;
         width: 95%;
         height: 85%;
+    }
+}
+/* --- 12. ESTILOS DEL FORMULARIO DE CONTACTO --- */
+
+.contact-form-container {
+    max-width: 600px;
+    margin: 40px auto 0;
+    padding: 30px;
+    /* Fondo semi-transparente y desenfocado (como el track-item) */
+    background: rgba(10, 10, 15, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.6); /* Sombra morada neón */
+    border: 1px solid var(--color-accent-primary);
+    backdrop-filter: blur(5px);
+    text-align: left;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--color-accent-secondary); /* Color cian para destacar las etiquetas */
+    text-shadow: 0 0 5px var(--color-accent-secondary);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--color-accent-primary);
+    border-radius: 8px;
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+    resize: vertical; /* Permite redimensionar el textarea verticalmente */
+}
+
+/* Efecto de foco (Neón azul/cian) */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-accent-secondary);
+    box-shadow: 0 0 10px var(--color-accent-secondary), 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+/* Estilo del botón de envío */
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: var(--color-accent-primary);
+    color: var(--color-text-light);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+}
+
+.submit-btn:hover {
+    background: var(--color-accent-secondary);
+    color: var(--color-bg-dark); /* Color oscuro para el texto al pasar el ratón */
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(0, 255, 255, 0.6);
+}
+/* --- 4. ESTILOS DE LA SECCIÓN HISTORIA (Actualizado con Slider) --- */
+.history-section {
+    padding-bottom: 80px;
+}
+
+.history-content {
+    display: flex;
+    align-items: center; /* Alineación vertical */
+    gap: 40px;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Estilos para el texto */
+.history-text {
+    flex: 1; /* Ocupa el espacio restante */
+    line-height: 1.8; /* Aumenta el espaciado para mejor legibilidad */
+}
+
+.history-text p {
+    font-size: 1.15rem; /* Hacemos el texto más grande para que no pase desapercibido */
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.history-text .signature {
+    font-family: 'Playfair Display', serif; /* Una fuente distinta para la firma */
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--color-accent-primary); /* Color morado */
+    text-align: right;
+    margin-top: 30px;
+    text-shadow: 0 0 5px rgba(138, 43, 226, 0.5);
+}
+
+/* --- Estilos del Slider --- */
+.history-slider {
+    flex-shrink: 0; /* Evita que el slider se encoja */
+    width: 350px; /* Ancho fijo para el slider de fotos */
+    height: 480px; /* Alto fijo */
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); /* Marco neón cian */
+    border: 3px solid var(--color-accent-secondary);
+}
+
+.slider-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide-item {
+    min-width: 100%; /* Cada slide ocupa el 100% del contenedor */
+    height: 100%;
+    display: block;
+}
+
+.history-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+    display: block;
+}
+
+/* Estilos para los botones (flechas) */
+.slider-prev, .slider-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--color-accent-secondary);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.slider-prev {
+    left: 10px;
+}
+
+.slider-next {
+    right: 10px;
+}
+
+.slider-prev:hover, .slider-next:hover {
+    background: rgba(138, 43, 226, 0.8);
+    color: var(--color-text-light);
+    box-shadow: 0 0 15px rgba(138, 43, 226, 1);
+}
+
+/* Estilos para los puntos indicadores */
+.slider-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    border: 1px solid var(--color-bg-dark);
+}
+
+.dot.active {
+    background: var(--color-accent-primary);
+    transform: scale(1.2);
+    box-shadow: 0 0 8px var(--color-accent-primary);
+}
+
+/* Media Query para móvil */
+@media (max-width: 768px) {
+    .history-content {
+        flex-direction: column; /* Apila el slider y el texto */
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .history-slider {
+        width: 100%; /* El slider ocupa todo el ancho */
+        max-width: 400px;
+        height: 550px; /* Ajusta la altura si es necesario */
+    }
+
+    .history-text {
+        padding: 0 10px;
+    }
+
+    .history-text p {
+        font-size: 1rem;
     }
 }
