@@ -853,3 +853,32 @@ a:hover {
         height: 45px;
     }
 }
+
+/* --- 14. ESTILOS DE CONTADOR DE VISITAS (NUEVO) --- */
+.visitor-counter {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background: rgba(10, 10, 15, 0.7);
+    border-radius: 10px;
+    /* Efecto Neón sutil para el contenedor */
+    box-shadow: 0 0 10px var(--color-accent-primary), 0 0 20px rgba(0, 255, 255, 0.3);
+    display: inline-block; /* Ajusta el ancho al contenido */
+}
+
+.visitor-counter p {
+    font-size: 1rem;
+    color: var(--color-accent-secondary); /* Color cian */
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.visitor-counter img {
+    /* Asegura que la imagen del contador se muestre sin problemas */
+    display: block;
+    margin: 0 auto;
+    /* Puedes añadir un pequeño filtro si el badge es muy "plano" */
+    filter: drop-shadow(0 0 5px var(--color-accent-secondary)); 
+}
